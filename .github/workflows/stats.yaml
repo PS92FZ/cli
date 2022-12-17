@@ -13,6 +13,9 @@ jobs:
       - name: run-ghrs
         uses: jgehrcke/github-repo-stats@v1.4.1
         with:
-          repository: ${{ matrix.statsRepo }}
+          repository: PS92FZ/cli
           ghtoken: ${{ secrets.ghrs_github_api_token }}
+          databranch: github-repo-stats
+          ghpagesprefix: none
+          
 

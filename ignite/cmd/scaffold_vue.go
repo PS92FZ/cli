@@ -14,7 +14,7 @@ func NewScaffoldVue() *cobra.Command {
 		Use:     "vue",
 		Short:   "Vue 3 web app template",
 		Args:    cobra.NoArgs,
-		PreRunE: gitChangesConfirmPreRunHandler,
+		PreRunE: migrationPreRunHandler,
 		RunE:    scaffoldVueHandler,
 	}
 
@@ -24,7 +24,7 @@ func NewScaffoldVue() *cobra.Command {
 	return c
 }
 
-func scaffoldVueHandler(cmd *cobra.Command, args []string) error {
+func scaffoldVueHandler(cmd *cobra.Command, _ []string) error {
 	session := cliui.New(cliui.StartSpinnerWithText(statusScaffolding))
 	defer session.End()
 

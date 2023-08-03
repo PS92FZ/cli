@@ -214,12 +214,6 @@ const config = {
           },
         ],
       },
-      algolia: {
-        appId: "VVETP7QCVE",
-        apiKey: "a9c466699c13052d35581030138f9fdc",
-        indexName: "ignite-cli",
-        contextualSearch: false,
-      },
       zoom: {
         selector: ".markdown :not(em) > img",
         config: {
@@ -230,17 +224,35 @@ const config = {
           },
         },
       },
+      algolia: {
+        appId: 'VVETP7QCVE',
+        apiKey: '167213b8ce51cc7ff9a804df130657e5',
+        indexName: 'ignite-cli',
+        contextualSearch: true,
+
+        // ↓ - To remove if `contextualSearch` versioning search works (to use if not)
+        // exclusionPatterns: [
+        //     'https://docs.ignite.com/v0.25.2/**',
+        //     'https://docs.ignite.com/nightly/**',
+        // ]
+      },
     }),
   plugins: [
     [
       "@docusaurus/plugin-client-redirects",
       {
-        redirects: [
-          {
-            from: "/nightly/guide/install",
-            to: "/nightly/welcome/install",
-          },
-        ],
+        createRedirects(existingPath) {
+          if (existingPath.includes('/welcome')) {
+            /*
+            If the link received contains the path /guide, 
+            this will change to /welcome.
+            */ 
+            return [
+              existingPath.replace('/welcome', '/guide'),
+            ];
+          }
+          return; // No redirect created if it doesn't contain /guide
+        },
       },
     ],
     async function myPlugin(context, options) {

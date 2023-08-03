@@ -14,7 +14,7 @@ func NewScaffoldReact() *cobra.Command {
 		Use:     "react",
 		Short:   "React web app template",
 		Args:    cobra.NoArgs,
-		PreRunE: gitChangesConfirmPreRunHandler,
+		PreRunE: migrationPreRunHandler,
 		RunE:    scaffoldReactHandler,
 	}
 
@@ -24,7 +24,7 @@ func NewScaffoldReact() *cobra.Command {
 	return c
 }
 
-func scaffoldReactHandler(cmd *cobra.Command, args []string) error {
+func scaffoldReactHandler(cmd *cobra.Command, _ []string) error {
 	session := cliui.New(cliui.StartSpinnerWithText(statusScaffolding))
 	defer session.End()
 

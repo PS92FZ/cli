@@ -10,11 +10,12 @@ import (
 
 func NewScaffoldWasm() *cobra.Command {
 	c := &cobra.Command{
-		Use:   "wasm",
-		Short: "Import the wasm module to your app",
-		Long:  "Add support for WebAssembly smart contracts to your blockchain",
-		Args:  cobra.NoArgs,
-		RunE:  scaffoldWasmHandler,
+		Use:     "wasm",
+		Short:   "Import the wasm module to your app",
+		Long:    "Add support for WebAssembly smart contracts to your blockchain",
+		Args:    cobra.NoArgs,
+		RunE:    scaffoldWasmHandler,
+		PreRunE: migrationPreRunHandler,
 	}
 
 	flagSetPath(c)
@@ -22,7 +23,7 @@ func NewScaffoldWasm() *cobra.Command {
 	return c
 }
 
-func scaffoldWasmHandler(cmd *cobra.Command, args []string) error {
+func scaffoldWasmHandler(cmd *cobra.Command, _ []string) error {
 	appPath := flagGetPath(cmd)
 
 	session := cliui.New(cliui.StartSpinnerWithText(statusScaffolding))

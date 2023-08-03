@@ -1,4 +1,51 @@
-## [`v0.26.0`](https://github.com/ignite/cli/releases/tag/v0.26.0)
+# Changelog
+
+## Unreleased
+
+### Features
+
+- [#3476](https://github.com/ignite/cli/pull/3476) Use `buf.build` binary to code generate from proto files
+
+### Changes
+
+- [#3581](https://github.com/ignite/cli/pull/3581) Bump cometbft and cometbft-db in the template
+- [#3559](https://github.com/ignite/cli/pull/3559) Bump network plugin version to `v0.1.1` 
+- [#3522](https://github.com/ignite/cli/pull/3522) Remove indentation from `chain serve` output
+
+### Fixes
+
+- [#3592](https://github.com/ignite/cli/pull/3592) Fix `pkg/protoanalysis` to support HTTP rule parameter arguments
+- [#3598](https://github.com/ignite/cli/pull/3598) Fix consensus param keeper constructor key in `app.go`
+
+## [`v0.27.0`](https://github.com/ignite/cli/releases/tag/v0.27.0)
+
+### Features
+- 
+- [#3505](https://github.com/ignite/cli/pull/3505) Auto migrate dependency tools
+- [#3538](https://github.com/ignite/cli/pull/3538) bump sdk to `v0.47.3` and ibc to `v7.1.0`
+- [#2736](https://github.com/ignite/cli/issues/2736) Add `--skip-git` flag to skip git repository initialization.
+- [#3381](https://github.com/ignite/cli/pull/3381) Add `ignite doctor` command
+- [#3446](https://github.com/ignite/cli/pull/3446) Add `gas-adjustment` flag to the cosmos client.
+- [#3439](https://github.com/ignite/cli/pull/3439) Add `--build.tags` flag for `chain serve` and `chain build` commands.
+- [#3524](https://github.com/ignite/cli/pull/3524) Apply auto tools migration to other commands
+- Added compatibility check and auto migration features and interactive guidelines for the latest versions of the SDK
+
+### Changes
+
+- [#3444](https://github.com/ignite/cli/pull/3444) Add support for ICS chains in ts-client generation
+- [#3494](https://github.com/ignite/cli/pull/3494) bump `cosmos-sdk` and `cometbft` versions
+- [#3434](https://github.com/ignite/cli/pull/3434) Detect app wiring implementation
+
+### Fixes
+
+- [#3497](https://github.com/ignite/cli/pull/3497) Use corret bank balance query url in faucet openapi
+- [#3481](https://github.com/ignite/cli/pull/3481) Use correct checksum format in release checksum file
+- [#3470](https://github.com/ignite/cli/pull/3470) Prevent overriding minimum-gas-prices with default value
+- [#3523](https://github.com/ignite/cli/pull/3523) Upgrade Cosmos SDK compatibility check for scaffolded apps
+- [#3441](https://github.com/ignite/cli/pull/3441) Correct wrong client context for cmd query methods
+- [#3487](https://github.com/ignite/cli/pull/3487) Handle ignired error in package `cosmosaccount` `Account.PubKey`
+
+## [`v0.26.1`](https://github.com/ignite/cli/releases/tag/v0.26.1)
 
 ### Features
 
@@ -20,8 +67,6 @@
 - [#2999](https://github.com/ignite/cli/pull/2999/) Add `ignite network request remove-account` command.
 - [#2458](https://github.com/ignite/cli/issues/2458) New `chain serve` command UI.
 - [#2992](https://github.com/ignite/cli/issues/2992) Add `ignite chain debug` command.
-- [#2736](https://github.com/ignite/cli/issues/2736) Add `--skip-git` flag to skip git repository initialization.
-- [#3446](https://github.com/ignite/cli/pull/3446) Add `gas-adjustment` flag to the cosmos client.
 
 ### Changes
 
@@ -57,6 +102,9 @@
 - [#3244](https://github.com/ignite/cli/pull/3244) Update `actions.yml` for resolving deprecation message
 - [#3337](https://github.com/ignite/cli/pull/3337) Remove `pkg/openapiconsole` import from scaffold template.
 - [#3337](https://github.com/ignite/cli/pull/3337) Register`nodeservice` gRPC in `app.go` template.
+- [#3455](https://github.com/ignite/cli/pull/3455) Bump `cosmos-sdk` to `v0.47.1`
+- [#3434](https://github.com/ignite/cli/pull/3434) Detect app wiring implementation.
+- [#3445](https://github.com/ignite/cli/pull/3445) refactor: replace `github.com/ghodss/yaml` with `sigs.k8s.io/yaml`
 
 ### Breaking Changes
 
@@ -67,7 +115,7 @@
 - [#3114](https://github.com/ignite/cli/pull/3114) Fix out of gas issue when approving many requests
 - [#3068](https://github.com/ignite/cli/pull/3068) Fix REST codegen method casing bug
 - [#3031](https://github.com/ignite/cli/pull/3031) Move keeper hooks to after all keepers initialized in `app.go` template.
-- [#3098](https://github.com/ignite/cli/issues/3098) Fix config upgrade issue that left config empty on error. 
+- [#3098](https://github.com/ignite/cli/issues/3098) Fix config upgrade issue that left config empty on error.
 - [#3129](https://github.com/ignite/cli/issues/3129) Remove redundant `keyring-backend` config option.
 - [#3187](https://github.com/ignite/cli/issues/3187) Change prompt text to fit within 80 characters width.
 - [#3203](https://github.com/ignite/cli/issues/3203) Fix relayer to work with multiple paths.
@@ -82,7 +130,6 @@
 ### Changes
 
 - [#3145](https://github.com/ignite/cli/pull/3145) Security fix upgrading Cosmos SDK to `v0.46.6`
-# Changelog
 
 ## [`v0.25.1`](https://github.com/ignite/cli/releases/tag/v0.25.1)
 
